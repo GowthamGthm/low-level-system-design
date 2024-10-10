@@ -160,7 +160,7 @@ public class Main {
                               .stream()
                               .filter(ele -> {
                                   return ele.getTotalParkingSlots() - Optional.ofNullable(ele.getTakenParkingSlots())
-                                                                              .orElse(0) > spaceNeededForvehicle;
+                                                                              .orElse(0) >= spaceNeededForvehicle;
                               })
                               .findFirst()
                               .orElse(null);
